@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Acordion from '../components/Acordion.jsx';
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+      <h4 class="title">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <use href="../../public/hedera.svg#icon"></use>
+        </svg>
+        <span>Pytaj,</span> jakby jutra miało nie być. Odpowiemy!
+      </h4>
+    <Acordion client:load />
+  </main>
+</Layout>
+
+<style lang="scss">
+  main {
+    margin:0 auto;
+    padding: 4rem 2.5rem 2.5rem 2.5rem;
+    width: 1366px;
+    color: white;
+  }
+  .title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.4rem;
+    letter-spacing: -0.0225em;
+    text-align: left;
+    margin-bottom: 2rem;
+    span {
+      background: linear-gradient(#2dd282, #90f4e8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  
+  }
+  @media screen and (min-width:768px) and (max-width:1024px) {
+    main{
+      width: 768px;
+      padding: 2.5rem 5rem
+    }
+  }
+  @media screen and (max-width: 767px) {
+    main{
+      width: 360px;
+      padding: 2.5rem 1rem
+    }
+    .title{
+      font-size: 1.375rem;
+      line-height: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+}
+
+</style>

@@ -25,9 +25,9 @@ const Acordion = () => {
         <div className="pagination-container">
           <p
             className="pagination-counter"
-            style={{ marginLeft: `calc(${progressPercentage}% - 29px)` }}
+            style={{ marginLeft: `calc(${progressPercentage}% - 25px)` }}
           >
-            {visibleItems}/{questions.length}
+            {visibleItems} / {questions.length}
             <span />
           </p>
           <div className="progression-bar">

@@ -16,10 +16,13 @@ const Question: React.FC<QuestionProps> = ({ question, index }) => {
   };
 
   return (
-    <li className={`item ${openIndex === index ? 'active' : ''}`}>
+    <li
+      onClick={() => handleToggle(index)}
+      className={`item ${openIndex === index ? 'active' : ''}`}
+    >
       <div className="list-container">
         <h2 className="title">{question.title}</h2>
-        <button onClick={() => handleToggle(index)}>
+        <button>
           <svg
             className={`icon ${openIndex === index ? 'rotate' : ''}`}
             width="24"

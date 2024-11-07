@@ -24,20 +24,11 @@ const Question: React.FC<QuestionProps> = ({ question, index }) => {
         <h2 className="title">{question.title}</h2>
         {openIndex === index && <p className="text">{question.body}</p>}
         <button>
-          <svg
-            className={`icon ${openIndex === index ? 'rotate' : ''}`}
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <use
-              href={
-                openIndex === index
-                  ? '../../public/minuscircle.svg#icon'
-                  : '../../public/addcircle.svg#icon'
-              }
-            ></use>
-          </svg>
+          <div className="icon-circle">
+            <div
+              className={`icon-${openIndex === index ? 'minus' : 'plus'} icon ${openIndex === index ? 'rotate' : ''}`}
+            />
+          </div>
         </button>
       </summary>
     </details>

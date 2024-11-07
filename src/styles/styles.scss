@@ -78,11 +78,63 @@
     }
     .icon {
       transition: transform 0.3s ease;
+      position: relative;
+      &-circle {
+        width: 24px;
+        height: 24px;
+        background:
+          linear-gradient(black, black) padding-box,
+          linear-gradient(#2dd282, #90f4e8) border-box;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid transparent;
+      }
+      &-minus::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        height: 1px;
+        background: linear-gradient(#2dd282, #90f4e8) border-box;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      &-plus::before {
+        content: '';
+        position: absolute;
+        background: linear-gradient(#2dd282, #90f4e8) border-box;
+        top: 50%;
+        left: 50%;
+        width: 6px;
+        height: 1px;
+        transform: translate(-50%, -50%);
+      }
+      &-plus::after {
+        content: '';
+        background: linear-gradient(#2dd282, #90f4e8) border-box;
+        position: absolute;
+        width: 1px;
+        height: 6px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
 
       &.rotate {
         transform: rotate(180deg);
       }
     }
+
+    // .icon {
+    //   transition: transform 0.3s ease;
+
+    //   &.rotate {
+    //     transform: rotate(180deg);
+    //   }
+    // }
   }
 }
 

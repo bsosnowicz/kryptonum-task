@@ -16,12 +16,13 @@ const Question: React.FC<QuestionProps> = ({ question, index }) => {
   };
 
   return (
-    <li
+    <details
       onClick={() => handleToggle(index)}
       className={`item ${openIndex === index ? 'active' : ''}`}
     >
-      <div className="list-container">
+      <summary className="list-container">
         <h2 className="title">{question.title}</h2>
+        {openIndex === index && <p className="text">{question.body}</p>}
         <button>
           <svg
             className={`icon ${openIndex === index ? 'rotate' : ''}`}
@@ -38,9 +39,8 @@ const Question: React.FC<QuestionProps> = ({ question, index }) => {
             ></use>
           </svg>
         </button>
-      </div>
-      {openIndex === index && <p className="text">{question.body}</p>}
-    </li>
+      </summary>
+    </details>
   );
 };
 

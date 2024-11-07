@@ -51,7 +51,7 @@
     .list-container {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
     }
     .title {
       font-size: 1rem;
@@ -73,6 +73,8 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      position: absolute;
+      right: 16px;
     }
     .icon {
       transition: transform 0.3s ease;

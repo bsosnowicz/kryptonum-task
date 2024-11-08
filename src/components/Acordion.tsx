@@ -38,8 +38,32 @@ const Acordion = () => {
           </div>
           <button className="pagination-button" onClick={loadMore}>
             Wczytaj więcej
-            <svg width="16" height="17" viewBox="0 0 16 17">
-              <use href="../../public/arrowdown.svg#icon"></use>
+            <svg
+              width="16"
+              height="17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              id="icon"
+            >
+              <path
+                d="M8 3.15v10.667m0 0 4-4m-4 4-4-4"
+                stroke="url(#paint0_linear_7069_284)"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <linearGradient
+                  id="paint0_linear_7069_284"
+                  x1="11.85"
+                  y1="3.15"
+                  x2="3.509"
+                  y2="14.817"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0%" stop-color="#2DD282" />
+                  <stop offset="100%" stop-color="#90F4E8" />
+                </linearGradient>
+              </defs>
             </svg>
           </button>
         </div>

@@ -14,18 +14,25 @@
     counter-increment: list;
     list-style: none;
     position: relative;
-    padding: 1.25rem 1rem 1.25rem 6rem;
+    padding: clamp(calc(8rem / 16), calc(20vw / 7.68), calc(16rem / 16))
+      clamp(0rem, calc(16vw / 7.68), calc(16rem / 16))
+      clamp(calc(12rem / 16), calc(20vw / 7.68), calc(20rem / 16))
+      clamp(calc(32rem / 16), calc(96vw / 7.68), calc(96rem / 16));
     &::before {
       content: counter(list, decimal-leading-zero) ' ';
       position: absolute;
       color: #c6cdcc;
-      margin-left: -5rem;
+      margin-left: clamp(
+        calc(-80rem / 16),
+        calc(-80vw / 7.68),
+        calc(-44rem / 16)
+      );
       font-size: 1rem;
       font-weight: 400;
       line-height: 1.75rem;
       letter-spacing: 0.005em;
       text-align: left;
-      width: 3rem;
+      width: clamp(calc(20rem / 16), calc(46vw / 16), calc(46rem / 16));
     }
 
     &::after {
@@ -54,9 +61,12 @@
       flex-direction: column;
     }
     .title {
+      font-size: clamp(calc(16rem / 16), calc(24vw / 7.68), calc(24rem / 16));
+      width: clamp(calc(264rem / 16), calc(1048vw / 17), calc(1048rem / 16));
       font-size: 1rem;
       font-weight: 400;
-      line-height: 1.75rem;
+      line-height: 1.5rem;
+      line-height: clamp(calc(24rem / 16), calc(28vw / 7.68), calc(28rem / 16));
       letter-spacing: 0.005em;
       text-align: left;
     }
@@ -67,7 +77,7 @@
       line-height: 1.531rem;
       letter-spacing: 0.015em;
       text-align: left;
-      width: 35.875rem;
+      width: clamp(calc(123rem / 16), calc(574vw / 7.68), calc(574rem / 16));
     }
     button {
       background-color: transparent;
@@ -127,14 +137,6 @@
         transform: rotate(180deg);
       }
     }
-
-    // .icon {
-    //   transition: transform 0.3s ease;
-
-    //   &.rotate {
-    //     transform: rotate(180deg);
-    //   }
-    // }
   }
 }
 
@@ -190,28 +192,6 @@
       background: linear-gradient(#2dd282, #90f4e8);
       height: 100%;
       width: 8.125rem;
-    }
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .item {
-    .title {
-      font-size: 1.25rem;
-      line-height: 2.188rem;
-    }
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .item {
-    &::before {
-      width: 1.25rem !important;
-      margin-left: -2rem !important;
-    }
-    padding: 0.5rem 0 0.75rem 2rem !important;
-    .text {
-      width: 20.5rem !important;
     }
   }
 }

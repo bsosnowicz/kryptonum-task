@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type CSSProperties } from 'react';
 
 interface QuestionProps {
   question: {
@@ -6,10 +6,16 @@ interface QuestionProps {
     body: string;
   };
   index: number;
+  visibleItems: number;
+  style?: CSSProperties;
 }
 
-const Question: React.FC<QuestionProps> = ({ question, index }) => {
-  const [openIndex, setOpenIndex] = useState(0);
+const Question: React.FC<QuestionProps> = ({
+  question,
+  index,
+  visibleItems,
+}) => {
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const handleToggle = (index: number) => {
     setOpenIndex((prevIndex) => (prevIndex === index ? -1 : index));
@@ -17,8 +23,10 @@ const Question: React.FC<QuestionProps> = ({ question, index }) => {
 
   return (
     <details
+      style={{ display: index < visibleItems ? 'block' : 'none' }}
       onClick={() => handleToggle(index)}
       className={`item ${openIndex === index ? 'active' : ''}`}
+      data-index={index < 9 ? `0${index + 1}` : index + 1}
     >
       <summary className="list-container">
         <h2 className="title">{question.title}</h2>

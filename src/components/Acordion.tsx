@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import '../styles/styles.scss';
 import { questions } from '../data/questions';
 import Question from './Question';
+import '../styles/styles.scss';
 
 const Acordion = () => {
   const [visibleItems, setVisibleItems] = useState(10);
@@ -12,13 +12,15 @@ const Acordion = () => {
 
   const progressPercentage = (visibleItems / questions.length) * 100;
 
-  const slicedQuestions = questions.slice(0, visibleItems);
-
   return (
     <div className="container">
       <ol className="item-list">
-        {slicedQuestions.map((question, index) => (
-          <Question question={question} index={index} />
+        {questions.map((question, index) => (
+          <Question
+            question={question}
+            index={index}
+            visibleItems={visibleItems}
+          />
         ))}
       </ol>
       {visibleItems < questions.length && (
@@ -61,7 +63,7 @@ const Acordion = () => {
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop offset="0%" stop-color="#2DD282" />
-                  <stop offset="100%" stop-color="#90F4E8" />
+                  <stop offset="100%" stop-color="#90F4E8" />s
                 </linearGradient>
               </defs>
             </svg>

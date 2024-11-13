@@ -19,7 +19,7 @@
       clamp(calc(12rem / 16), calc(20vw / 7.68), calc(20rem / 16))
       clamp(calc(32rem / 16), calc(96vw / 7.68), calc(96rem / 16));
     &::before {
-      content: counter(list, decimal-leading-zero) ' ';
+      content: attr(data-index);
       position: absolute;
       color: #c6cdcc;
       margin-left: clamp(

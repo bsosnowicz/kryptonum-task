@@ -28,7 +28,7 @@ const Question: React.FC<QuestionProps> = ({
       className={`item ${openIndex === index ? 'active' : ''}`}
       data-index={index < 9 ? `0${index + 1}` : index + 1}
     >
-      <summary className="list-container">
+      <summary className="list-container" tabIndex={-1}>
         <h2 className="title">{question.title}</h2>
         {openIndex === index && <p className="text">{question.body}</p>}
         <button>
